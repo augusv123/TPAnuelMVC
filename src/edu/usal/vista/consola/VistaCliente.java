@@ -2,17 +2,23 @@ package edu.usal.vista.consola;
 
 
 import java.util.List;
+import java.util.Scanner;
 
 import edu.usal.negocio.dominio.Cliente;
 import edu.usal.util.IOGeneral;
 
 public class VistaCliente {
+	private  Scanner sc ;
+public VistaCliente(){
 
+
+}
 	public int menu() {
 		System.out.println("");
 		System.out.println("1-Agregar Cliente");
 		System.out.println("2-Todos Los Clientes");
-		System.out.println("3-Salir");
+		System.out.println("3-Eliminar Cliente");
+		System.out.println("4-Salir");
 		return IOGeneral.leerInt("Ingrese una opcion", "Solo numeros");
 
 	}
@@ -37,10 +43,13 @@ public class VistaCliente {
 		
 	}
 
-	public void eliminarCliente(int linea) {
-		
-		
-		
+	public String eliminarCliente() {
+
+
+		String dni  =  IOGeneral.leerLinea("Ingrese el dni del cliente que desea eliminar");
+
+return dni ;
+
 	}
 
 
@@ -64,3 +73,4 @@ public class VistaCliente {
 	
 	
 }
+

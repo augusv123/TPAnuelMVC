@@ -26,7 +26,8 @@ public class ControladorCliente {
 		
 	}
 	public void EliminarCliente() throws IOException{
-		vista.eliminarCliente(0);
+		this.clienteDAO.EliminarCliente(vista.eliminarCliente());
+
 	}
 	
 	public void Todos() throws IOException{
@@ -49,10 +50,17 @@ public class ControladorCliente {
 				break;
 
 			case 3:
-				fin = true;
+
+				this.EliminarCliente();
 				break;
+
+
+				case 4:
+					fin = true;
+					break;
+
 			default:
-				System.out.println("Opcion no válida.");
+				System.out.println("Opcion no vï¿½lida.");
 			}
 			
 		}
