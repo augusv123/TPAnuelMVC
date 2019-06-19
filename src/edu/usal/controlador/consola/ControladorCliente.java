@@ -13,7 +13,7 @@ public class ControladorCliente {
 	private VistaCliente vista;
 	private ClienteDAO clienteDAO;
 	
-	public ControladorCliente(VistaCliente vista) {
+	public ControladorCliente(VistaCliente vista) throws IOException {
 		super();
 		this.vista = vista;
 		this.clienteDAO = ClienteFactory.GetImplementation("Archivo");
@@ -25,8 +25,10 @@ public class ControladorCliente {
 		this.clienteDAO.AgregarCliente(vista.AltaCliente());
 		
 	}
-	public void EliminarCliente() throws IOException{
-		this.clienteDAO.EliminarCliente(vista.eliminarCliente());
+	public boolean EliminarCliente() throws IOException{
+	boolean encontrado = 	this.clienteDAO.EliminarCliente(vista.eliminarCliente());
+
+	return encontrado;
 
 	}
 	
