@@ -33,7 +33,7 @@ public VistaCliente(){
 		
 		cliente.setNombreYApellido(IOGeneral.leerLinea("Ingrese nombre y apellido: "));
 		cliente.setDni(IOGeneral.leerLinea("Ingrese Dni: "));
-
+		cliente.setEmail(IOGeneral.leerLinea("Ingrese Email: "));
 
 		
 		
@@ -59,7 +59,8 @@ return dni ;
 			
 			System.out.println(
 			"Nombre y apellido: "+ cliente.getNombreYApellido() +
-			", Dni: " + cliente.getDni()
+			", Dni: " + cliente.getDni() +
+			", Email: " + cliente.getEmail()
 			+ " || "	);
 			
 			
