@@ -26,8 +26,21 @@ public class ControladorCliente {
 		
 	}
 	public boolean EliminarCliente() throws IOException{
-	boolean encontrado = 	this.clienteDAO.EliminarCliente(vista.eliminarCliente());
+		String dni = vista.eliminarCliente();
+		if(dni.equals("back")){
+			return false;
 
+		}
+	boolean encontrado = 	this.clienteDAO.EliminarCliente(dni);
+	if(encontrado == true){
+		vista.mensaje("Se elimino el cliente con DNI " + dni + "\n");
+		Todos();
+	}
+	else{
+		vista.mensaje("no se encontro");
+
+
+	}
 	return encontrado;
 
 	}
